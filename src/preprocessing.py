@@ -86,3 +86,29 @@ def full_pipeline(file_path):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     return X_train, X_test, y_train, y_test
+
+def full_pipeline_no_split(file_path):
+    df = load_data(file_path)
+    df = clean_data(df)
+    df = engineer_features(df)
+    df = encode_features(df)
+    X, y = get_features_and_target(df)
+
+    return X, y
+
+
+def get_features_only(df):
+
+    feature_cols = ['Pclass', 'FamilySize', 'isAlone', 'Sex_encoded', 'Age_filled', 'Age_Group_encoded', 'C', 'Q', 'Master', 'Miss', 'Mrs', 'Rare', 'Fare', 'HasCabin']
+
+    X = df[feature_cols]
+
+    return X
+
+def full_pipeline_test(file_path):
+    df = load_data(file_path)
+    df = clean_data(df)
+    df = engineer_features(df)
+    df = encode_features(df)
+    X = get_features_only(df)
+    return X
