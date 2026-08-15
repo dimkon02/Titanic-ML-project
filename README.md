@@ -75,3 +75,12 @@ The tuned Random Forest scored **78.5%** on Kaggle's public leaderboard — nota
 2. Activate: `venv\Scripts\activate`
 3. Install deps: `pip install -r requirements.txt`
 4. Download data from Kaggle: https://www.kaggle.com/c/titanic/data → place in `data/`
+
+## What I'd Improve Next
+
+- Extract signal from `Ticket` (currently unused), similar to the `Title` extraction from `Name`
+- Try grouped-median Age imputation (by Pclass/Sex/Title) instead of a single overall median
+- Recalculate precision/recall/F1 via cross-validation for full consistency with the accuracy metric
+- Explore an ensemble/voting classifier combining multiple models
+- Clean up notebook cells (remove debugging artifacts, consolidate redundant exploration)
+- **Extend into an MLE-style deployment**: save the final model, wrap it in a FastAPI endpoint for real-time predictions, containerize with Docker, and add automated tests — turning this from an analysis into a deployable service
