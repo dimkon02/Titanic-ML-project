@@ -23,10 +23,10 @@ A complete data science / machine learning project predicting Titanic passenger 
 ![Survival rate by sex](images/sex_survival.png)
 
 - **Class and Sex had a very strong effect when viewed together**: 1st class Women ~97%, 3rd class Men ~13%
-![Survival rate by class and sex](images/class_sex_survival.png)
+![Survival rate by class and sex](images/pclass_sex_survival.png)
 
 - **Family size had a non-linear relationship with survival** — small families (2-4 people) survived best (~72%), while both solo travelers (~30%) and large families (~13-20%) fared worse
-![Survival rate by family size](images/familysize_survival.png)
+![Survival rate by family size](images/FamilySize_survival.png)
 
 - **Different models relied on different features** despite similar accuracy — Logistic Regression leaned heavily on the engineered `Title` feature, while tree-based models found more signal directly in `Fare` and `Age`
 ![Feature importance comparison: Logistic Regression vs Random Forest](images/feature_importance_comparison.png)
@@ -60,7 +60,7 @@ titanic-ml-project/
 | Gradient Boosting (tuned) | 82.7% | 81.2% | 75.7% | 78.3% | 0.898 |
 
 
-![ROC curves for all models](images/roc_curves_comparison.png)
+![ROC curves for all models](images/roc_curves.png)
 
 **Final model:** Random Forest (`n_estimators=200, max_depth=5, min_samples_split=5`)
 
